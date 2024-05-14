@@ -50,18 +50,15 @@ struct TweetRowView: View {
                 } label: {
                     Image(systemName: "bubble.left")
                         .font(.subheadline)
-                        .foregroundStyle(Color(.gray))
                 }
-                
                 
                 Spacer()
                 
                 Button {
                     // action goes here...
                 } label: {
-                    Image(systemName: "repeat")
+                    Image(systemName: "arrow.2.squarepath")
                         .font(.subheadline)
-                        .foregroundStyle(Color(.gray))
                 }
                 
                 Spacer()
@@ -71,7 +68,6 @@ struct TweetRowView: View {
                 } label: {
                     Image(systemName: "heart")
                         .font(.subheadline)
-                        .foregroundStyle(Color(.gray))
                 }
                 
                 Spacer()
@@ -81,13 +77,15 @@ struct TweetRowView: View {
                 } label: {
                     Image(systemName: "bookmark")
                         .font(.subheadline)
-                        .foregroundStyle(Color(.gray))
                 }
 
             }
             .padding()
+            .foregroundStyle(Color(.gray))
+            
+            Divider()
         }
-        .padding()
+        
     }
 }
 

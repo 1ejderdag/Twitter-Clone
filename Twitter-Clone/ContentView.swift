@@ -8,17 +8,58 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var showMenu = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        
+        ZStack(alignment: .topLeading) {
+            MainTabView()
+                .toolbar(showMenu ? .hidden : .visible) // .navigationBarHidden(showMenu) is depreceted.
+            
+            if showMenu {
+                ZStack {
+                    Color(.black)
+                        .opacity(showMenu ? 0.3 : 0.0)
+                }
+                .onTapGesture {
+                    withAnimation(.easeInOut) {
+                        showMenu = false
+                    }
+                }
+                .ignoresSafeArea()
+            }
+            
+            SideMenuView()
+                .frame(width: 300)
+                .offset(x: showMenu ? 0 : -300, y: 0)
+                .background(showMenu ? Color.white : Color.clear)
         }
-        .padding()
+        .navigationTitle("Home")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    withAnimation(.easeInOut) {
+                        showMenu.toggle()
+                    }
+                } label: {
+                    Circle()
+                        .frame(width: 32, height: 32)
+                        
+                }
+
+            }
+        }
+        .onAppear {
+            showMenu = false // toolbar tekrar açıldığında side menu kapalı olacak.
+        }
     }
 }
 
 #Preview {
-    ContentView()
+    NavigationStack {
+        ContentView()
+    }
+    
 }

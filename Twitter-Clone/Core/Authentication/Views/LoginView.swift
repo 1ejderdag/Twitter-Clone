@@ -50,7 +50,7 @@ struct LoginView: View {
             } label: {
                 Text("Sign In")
                     .font(.headline)
-                    .frame(width: 350, height: 60)
+                    .frame(width: 350, height: 50)
                     .foregroundStyle(Color(.white))
                     .background(Color(.systemBlue))
                     .clipShape(Capsule())

@@ -34,7 +34,7 @@ struct RegistrationView: View {
             } label: {
                 Text("Sign Up")
                     .font(.headline)
-                    .frame(width: 350, height: 60)
+                    .frame(width: 350, height: 50)
                     .foregroundStyle(Color(.white))
                     .background(Color(.systemBlue))
                     .clipShape(Capsule())

@@ -19,54 +19,58 @@ struct RegistrationView: View {
             
         VStack {
             
-            AuthHeaderView(row1: "Get started.", row2: "Create your account")
-            
-            VStack(spacing: 40) {
+            if viewModel.didAuthenticateUser {
+                ProfilePhotoSelectorView()
+            } else {
                 
-                CustomInputField(imageName: "envelope", placeholderText: "Email", text: $email)
-                CustomInputField(imageName: "person", placeholderText: "Username", text: $username)
-                CustomInputField(imageName: "person", placeholderText: "Full Name", text: $fullName)
-                CustomInputField(imageName: "lock", placeholderText: "Password", isSecured: true, text: $password)
-            }
-            .padding(32)
-            
-            Button {
-                viewModel.register(withEmail: email,
-                                   username: username,
-                                   fullName: fullName,
-                                   password: password)
-            } label: {
-                Text("Sign Up")
-                    .font(.headline)
-                    .frame(width: 350, height: 50)
-                    .foregroundStyle(Color(.white))
-                    .background(Color(.systemBlue))
-                    .clipShape(Capsule())
-                    .padding()
-            }
-            .shadow(color: .gray.opacity(0.5), radius: 10)
-            
-            Spacer()
-            
-            Button {
-                dismiss()
-            } label: {
-                HStack {
-                    Text("Already have an account?")
-                        .font(.footnote)
+                AuthHeaderView(row1: "Get started.", row2: "Create your account")
+                
+                VStack(spacing: 40) {
                     
-                    Text("Sign In")
-                        .font(.footnote)
-                        .fontWeight(.semibold)
+                    CustomInputField(imageName: "envelope", placeholderText: "Email", text: $email)
+                    CustomInputField(imageName: "person", placeholderText: "Username", text: $username)
+                    CustomInputField(imageName: "person", placeholderText: "Full Name", text: $fullName)
+                    CustomInputField(imageName: "lock", placeholderText: "Password", isSecured: true, text: $password)
                 }
+                .padding(32)
+                
+                Button {
+                    viewModel.register(withEmail: email,
+                                       username: username,
+                                       fullName: fullName,
+                                       password: password)
+                } label: {
+                    Text("Sign Up")
+                        .font(.headline)
+                        .frame(width: 350, height: 50)
+                        .foregroundStyle(Color(.white))
+                        .background(Color(.systemBlue))
+                        .clipShape(Capsule())
+                        .padding()
+                }
+                .shadow(color: .gray.opacity(0.5), radius: 10)
+                
+                Spacer()
+                
+                Button {
+                    dismiss()
+                } label: {
+                    HStack {
+                        Text("Already have an account?")
+                            .font(.footnote)
+                        
+                        Text("Sign In")
+                            .font(.footnote)
+                            .fontWeight(.semibold)
+                    }
+                }
+                .padding(.bottom, 30)
             }
-            .padding(.bottom, 30)
-
         }
         .ignoresSafeArea()
     }
 }
-
+/*
 #Preview {
     RegistrationView()
-}
+}*/

@@ -11,7 +11,9 @@ struct CustomInputField: View {
     
     let imageName: String
     let placeholderText: String
+    var isSecured: Bool? = false
     @Binding var text: String
+    
     var body: some View {
 
         VStack {
@@ -22,7 +24,12 @@ struct CustomInputField: View {
                     .frame(width: 20, height: 20)
                     .foregroundStyle(Color(.darkGray))
                 
-                TextField(placeholderText, text: $text)
+                if isSecured ?? false {
+                    SecureField(placeholderText, text: $text)
+                } else {
+                    TextField(placeholderText, text: $text)
+                }
+                
             }
             Divider()
                 .background(Color(.darkGray))

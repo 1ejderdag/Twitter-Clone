@@ -10,9 +10,32 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var showMenu = false
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         
+        Group {
+            
+            if viewModel.userSession == nil {
+                // no user logged in
+                LoginView()
+            } else {
+                // have a logged in user
+                mainInterfaceView
+            }
+        }
+    }
+}
+
+#Preview {
+    NavigationStack {
+        ContentView()
+    }
+}
+
+extension ContentView {
+    
+    var mainInterfaceView: some View {
         ZStack(alignment: .topLeading) {
             MainTabView()
                 .toolbar(showMenu ? .hidden : .visible) // .navigationBarHidden(showMenu) is depreceted.
@@ -55,11 +78,4 @@ struct ContentView: View {
             showMenu = false // toolbar tekrar açıldığında side menu kapalı olacak.
         }
     }
-}
-
-#Preview {
-    NavigationStack {
-        ContentView()
-    }
-    
 }

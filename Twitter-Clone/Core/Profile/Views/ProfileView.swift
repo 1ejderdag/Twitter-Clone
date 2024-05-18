@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ProfileView: View {
     
     @State private var selectedFilter: TweetFilterViewModel = .tweets
     @Environment(\.dismiss) private var dismiss
     @Namespace var animation
+    private let user: User
+    
+    init(user: User) {
+        self.user = user
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -27,11 +33,16 @@ struct ProfileView: View {
             
             Spacer()
         }
+        .toolbar(.hidden)
     }
 }
 
 #Preview {
-    ProfileView()
+    ProfileView(user: User(id: NSUUID().uuidString,
+                           email: "deneme@gmail.com", 
+                           username: "deneme",
+                           fullName: "Deneme deneme",
+                           profileImageUrl: ""))
 }
 
 extension ProfileView {
@@ -50,10 +61,13 @@ extension ProfileView {
                         .resizable()
                         .frame(width: 20, height: 16)
                         .foregroundStyle(Color(.white))
-                        .offset(x: 16, y: 12)
+                        .offset(x: 16, y: -4)
                 }
 
-                Circle()
+                KFImage(URL(string: user.profileImageUrl))
+                    .resizable()
+                    .scaledToFill()
+                    .clipShape(Circle())
                     .frame(width: 72, height: 72)
                     .offset(x: 16, y: 24)
             }
@@ -88,18 +102,18 @@ extension ProfileView {
         
         VStack(alignment: .leading, spacing: 4) {
             HStack {
-                Text("Ejder Dag")
+                Text(user.fullName)
                     .font(.title2).bold()
                 
                 Image(systemName: "checkmark.seal.fill")
                     .foregroundStyle(Color(.systemBlue))
             }
             
-            Text("@ejderdag")
+            Text("@\(user.username)")
                 .font(.subheadline)
                 .foregroundStyle(Color(.gray))
             
-            Text("I am the real God")
+            Text("This is a biography")
                 .font(.subheadline)
                 .padding(.vertical)
             

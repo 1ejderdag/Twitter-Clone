@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FeedView: View {
     @State private var showNewTweetView = false
+    @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {
         
         ZStack(alignment: .bottomTrailing) {

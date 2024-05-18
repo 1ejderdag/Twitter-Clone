@@ -31,6 +31,8 @@
 		3A90E3B02BF56F0C00F486CA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3A90E3AF2BF56F0C00F486CA /* FirebaseFirestore */; };
 		3A90E3B22BF56F0C00F486CA /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3A90E3B12BF56F0C00F486CA /* FirebaseFirestoreSwift */; };
 		3A90E3B42BF56F0C00F486CA /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 3A90E3B32BF56F0C00F486CA /* FirebaseStorage */; };
+		3AE326172BF965A80008983B /* TweetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE326162BF965A80008983B /* TweetService.swift */; };
+		3AE326192BF967D40008983B /* UploadTweetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE326182BF967D40008983B /* UploadTweetViewModel.swift */; };
 		3AEB95CA2BF2AD000083999B /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEB95C92BF2AD000083999B /* ExploreView.swift */; };
 		3AEB95CC2BF2AD1B0083999B /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEB95CB2BF2AD1B0083999B /* MessagesView.swift */; };
 		3AEB95CE2BF2AD350083999B /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEB95CD2BF2AD350083999B /* NotificationsView.swift */; };
@@ -69,6 +71,8 @@
 		3A90E3A62BF5494800F486CA /* CustomInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputField.swift; sourceTree = "<group>"; };
 		3A90E3A82BF55D3700F486CA /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
 		3A90E3AA2BF56E3B00F486CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Twitter-Clone/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		3AE326162BF965A80008983B /* TweetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetService.swift; sourceTree = "<group>"; };
+		3AE326182BF967D40008983B /* UploadTweetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadTweetViewModel.swift; sourceTree = "<group>"; };
 		3AEB95C92BF2AD000083999B /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		3AEB95CB2BF2AD1B0083999B /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		3AEB95CD2BF2AD350083999B /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 		3A36BA452BF43AA500470C8C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				3AE326182BF967D40008983B /* UploadTweetViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -326,6 +331,7 @@
 			children = (
 				3AF3FCB42BF6C77A0000712C /* ImageUploader.swift */,
 				3AF3FCB62BF6E3C00000712C /* UserService.swift */,
+				3AE326162BF965A80008983B /* TweetService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -488,12 +494,14 @@
 				3A8153CE2BF2834800F0CEC0 /* FeedView.swift in Sources */,
 				3AEB95D52BF2E2A70083999B /* TweetFilterViewModel.swift in Sources */,
 				3A3EAA572BF8431200963D46 /* SearchBar.swift in Sources */,
+				3AE326172BF965A80008983B /* TweetService.swift in Sources */,
 				3A3EAA552BF8351600963D46 /* ExploreViewModel.swift in Sources */,
 				3A90E3A72BF5494800F486CA /* CustomInputField.swift in Sources */,
 				3AF55EA72BF0F8B200F7C330 /* Twitter_CloneApp.swift in Sources */,
 				3AF3FCB92BF6E8F10000712C /* User.swift in Sources */,
 				3A36BA492BF43E2E00470C8C /* TextArea.swift in Sources */,
 				3A36BA3A2BF3EB4800470C8C /* SideMenuView.swift in Sources */,
+				3AE326192BF967D40008983B /* UploadTweetViewModel.swift in Sources */,
 				3AEB95CC2BF2AD1B0083999B /* MessagesView.swift in Sources */,
 				3A36BA472BF43ADB00470C8C /* NewTweetView.swift in Sources */,
 				3AEB95CA2BF2AD000083999B /* ExploreView.swift in Sources */,

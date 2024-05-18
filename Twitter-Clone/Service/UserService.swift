@@ -24,4 +24,21 @@ struct UserService {
                 
             }
     }
+    
+    func fetchUsers(completion: @escaping([User]) -> Void) {
+        Firestore.firestore().collection("users")
+            .getDocuments { snapshot, _ in
+                guard let documents = snapshot?.documents else { return }
+                let users = documents.compactMap( { try? $0.data(as: User.self)}) // Her bir User objesini users arrayine ekler
+                
+                completion(users)
+            }
+    }
 }
+
+/* compactMap yerine kullanılabilir. compactMap fonksiyonunun map'ten farkı nil değerleri es geçecektir.
+documents.forEach { document in
+    guard let user = try? document.data(as: User.self) else { return }
+    
+    users.append(user)
+}*/

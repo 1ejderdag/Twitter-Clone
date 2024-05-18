@@ -17,6 +17,8 @@
 		3A36BA422BF4177E00470C8C /* SideMenuOptionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A36BA412BF4177D00470C8C /* SideMenuOptionRowView.swift */; };
 		3A36BA472BF43ADB00470C8C /* NewTweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A36BA462BF43ADB00470C8C /* NewTweetView.swift */; };
 		3A36BA492BF43E2E00470C8C /* TextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A36BA482BF43E2E00470C8C /* TextArea.swift */; };
+		3A3EAA552BF8351600963D46 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EAA542BF8351600963D46 /* ExploreViewModel.swift */; };
+		3A3EAA572BF8431200963D46 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3EAA562BF8431200963D46 /* SearchBar.swift */; };
 		3A8153CE2BF2834800F0CEC0 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8153CD2BF2834800F0CEC0 /* FeedView.swift */; };
 		3A8153D12BF284CE00F0CEC0 /* TweetRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8153D02BF284CE00F0CEC0 /* TweetRowView.swift */; };
 		3A8153D42BF2A0DE00F0CEC0 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8153D32BF2A0DE00F0CEC0 /* MainTabView.swift */; };
@@ -57,6 +59,8 @@
 		3A36BA412BF4177D00470C8C /* SideMenuOptionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionRowView.swift; sourceTree = "<group>"; };
 		3A36BA462BF43ADB00470C8C /* NewTweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTweetView.swift; sourceTree = "<group>"; };
 		3A36BA482BF43E2E00470C8C /* TextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextArea.swift; sourceTree = "<group>"; };
+		3A3EAA542BF8351600963D46 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
+		3A3EAA562BF8431200963D46 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		3A8153CD2BF2834800F0CEC0 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		3A8153D02BF284CE00F0CEC0 /* TweetRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetRowView.swift; sourceTree = "<group>"; };
 		3A8153D32BF2A0DE00F0CEC0 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -181,9 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				3A8153D02BF284CE00F0CEC0 /* TweetRowView.swift */,
-				3A36BA482BF43E2E00470C8C /* TextArea.swift */,
-				3A90E3A42BF53CA800F486CA /* RoundedShape.swift */,
-				3A90E3A62BF5494800F486CA /* CustomInputField.swift */,
 			);
 			path = Tweets;
 			sourceTree = "<group>";
@@ -257,6 +258,7 @@
 		3AEB95D72BF2FC1E0083999B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				3A3EAA542BF8351600963D46 /* ExploreViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -374,6 +376,10 @@
 			children = (
 				3AEB95D82BF2FC7D0083999B /* Users */,
 				3A8153CF2BF284BB00F0CEC0 /* Tweets */,
+				3A90E3A62BF5494800F486CA /* CustomInputField.swift */,
+				3A90E3A42BF53CA800F486CA /* RoundedShape.swift */,
+				3A36BA482BF43E2E00470C8C /* TextArea.swift */,
+				3A3EAA562BF8431200963D46 /* SearchBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -481,6 +487,8 @@
 				3A36BA3C2BF3EB6F00470C8C /* SideMenuRowView.swift in Sources */,
 				3A8153CE2BF2834800F0CEC0 /* FeedView.swift in Sources */,
 				3AEB95D52BF2E2A70083999B /* TweetFilterViewModel.swift in Sources */,
+				3A3EAA572BF8431200963D46 /* SearchBar.swift in Sources */,
+				3A3EAA552BF8351600963D46 /* ExploreViewModel.swift in Sources */,
 				3A90E3A72BF5494800F486CA /* CustomInputField.swift in Sources */,
 				3AF55EA72BF0F8B200F7C330 /* Twitter_CloneApp.swift in Sources */,
 				3AF3FCB92BF6E8F10000712C /* User.swift in Sources */,

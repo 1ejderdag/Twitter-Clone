@@ -28,7 +28,6 @@ struct NewTweetView: View {
                 
                 Button {
                     viewModel.uploadTweet(withCaption: caption)
-                    dismiss()
                 } label: {
                     Text("Tweet")
                         .bold()
@@ -55,6 +54,11 @@ struct NewTweetView: View {
                     
             }
             .padding()
+        }
+        .onReceive(viewModel.$didUploadTweet) { success in
+            if success {
+                dismiss()
+            }
         }
     }
 }

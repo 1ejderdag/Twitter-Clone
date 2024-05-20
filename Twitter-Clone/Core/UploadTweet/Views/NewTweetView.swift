@@ -28,6 +28,7 @@ struct NewTweetView: View {
                 
                 Button {
                     viewModel.uploadTweet(withCaption: caption)
+                    
                 } label: {
                     Text("Tweet")
                         .bold()

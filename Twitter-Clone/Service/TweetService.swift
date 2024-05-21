@@ -97,6 +97,29 @@ extension TweetService {
                 
                 completion(snapshot.exists) // true or false
             }
+    }
+    
+    func fetchLikedTweets(forUid uid: String, completion: @escaping([Tweet]) -> Void) {
+        var tweets = [Tweet]()
         
+        Firestore.firestore().collection("users")
+            .document(uid)
+            .collection("user-likes")
+            .getDocuments { snapshot, _ in
+                guard let documents = snapshot?.documents else { return }
+                
+                documents.forEach { doc in
+                    let tweetID = doc.documentID
+                    
+                    Firestore.firestore().collection("tweets")
+                        .document(tweetID)
+                        .getDocument { snapshot, _ in
+                            guard let tweet = try? snapshot?.data(as: Tweet.self) else { return }
+                            
+                            tweets.append(tweet)
+                            completion(tweets)
+                        }
+                }
+            }
     }
 }

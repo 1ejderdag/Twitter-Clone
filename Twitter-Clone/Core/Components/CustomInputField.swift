@@ -15,7 +15,6 @@ struct CustomInputField: View {
     @Binding var text: String
     
     var body: some View {
-
         VStack {
             HStack {
                 Image(systemName: imageName)
